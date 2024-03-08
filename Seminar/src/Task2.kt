@@ -1,5 +1,3 @@
-package seminar1
-
 fun main() {
     /*
     Реализовать функции sumAll, createOutputString и multiplyBy
