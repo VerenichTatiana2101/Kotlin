@@ -2,7 +2,7 @@ class UserView {
 
     fun userChoice() {
         var person: Person? = null
-        val commandController = CommandController()
+        val commandSorter = CommandSorter()
 
         while (true) {
             println(
@@ -12,26 +12,26 @@ class UserView {
                         "show\n" + "help\n" + "exit"
             )
 
-            val command = commandController.readCommand()
+            val command = commandSorter.readCommand()
 
             println(command)
 
             when (command) {
-                is AddPhoneCommand -> {
+                is Command.AddPhoneCommand -> {
                     person = Person(command.name)
                     person.phone = command.phone
                 }
 
-                is AddEmailCommand -> {
+                is Command.AddEmailCommand -> {
                     person = Person(command.name)
                     person.email = command.email
                 }
 
-                is HelpCommand -> {
+                is Command.HelpCommand -> {
                     command.helpCommand()
                 }
 
-                is ShowCommand -> {
+                is Command.ShowCommand -> {
                     if (person == null) {
                         println("Not initialized")
                     } else {
