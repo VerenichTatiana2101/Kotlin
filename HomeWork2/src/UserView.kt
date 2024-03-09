@@ -3,7 +3,6 @@ class UserView {
     fun userChoice() {
         var person: Person? = null
         val commandController = CommandController()
-        val helpCom = HelpCommand()
 
         while (true) {
             println(
@@ -17,10 +16,6 @@ class UserView {
 
             println(command)
 
-//            if (!command.isValid()) {
-//                println("Ошибка! Команда не распознана!")
-//                helpCom.helpCommand()
-//            } else {
             when (command) {
                 is AddPhoneCommand -> {
                     person = Person(command.name)
@@ -33,7 +28,6 @@ class UserView {
                 }
 
                 is HelpCommand -> {
-
                     command.helpCommand()
                 }
 
@@ -49,9 +43,7 @@ class UserView {
                         }
                     }
                 }
-
             }
         }
     }
 }
-//}

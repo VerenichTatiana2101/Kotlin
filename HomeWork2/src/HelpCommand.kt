@@ -1,7 +1,7 @@
  class HelpCommand() : Command {
     override fun isValid(): Boolean {
         return true
-    } // Всегда считаем команду корректной
+    }
 
     fun helpCommand() {
         println("help")

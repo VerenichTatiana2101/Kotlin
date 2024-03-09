@@ -25,11 +25,7 @@ class CommandController {
             input == "exit" -> exitProcess(0)
 
             else -> {
-//                object : Command {
-//                    override fun isValid(): Boolean {
-//                        return false
-//                    }
-//                }
+                println("Ошибка! Команда не распознана!")
                 HelpCommand()
             }
         }
